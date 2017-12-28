@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:200,400,600,800">
+  <title>Email contacts</title>
+</head>
+<body>
+  <h1 class="p-3 text-center">EMAIL CONTACTS</h1>
+  <div id="contacts">
+    <div class="card">
+      <div class="card-header card-header-info toggle view-contact px-2">
+        <div class="row no-gutters">
+          <i class="arrow-person material-icons col-auto medium my-auto mr-1">account_circle</i>
+          <h3 class="col mb-0 my-auto">Anna K. Behrensmeyer</h3>
+          <i class="arrow-person material-icons col-auto medium my-auto ml-auto">keyboard_arrow_down</i>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <a href="mailto:hardestwworkingman@showbusiness.com">
+          <li class="list-group-item list-group-item-warning">
+          <div class="row no-gutters">
+            <i class="material-icons col-2 medium my-auto ml-3 py-3 text-warning">email</i>
+            <div class="col-9 my-auto">hardestwworkingman@showbusiness.com</div>
+          </div>
+        </li>
+        </a>
+        <li class="list-group-item list-group-item-danger">
+          <div class="row no-gutters">
+            <i class="material-icons col-2 medium my-auto ml-3 text-danger">highlight_off</i>
+            <div class="col-9 my-auto">Delete contact</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-header card-header-info toggle view-contact">
+        <div class="row no-gutters">
+          <i class="arrow-person material-icons col-2 large my-auto mr-3">keyboard_arrow_down</i>
+          <h3 class="col mb-0 my-auto">Anna K. Behrensmeyer</h3>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <a href="mailto:hardestwworkingman@showbusiness.com">
+          <li class="list-group-item list-group-item-warning">
+          <div class="row no-gutters">
+            <i class="material-icons col-2 medium my-auto ml-3 py-3 text-warning">email</i>
+            <div class="col-9 my-auto">hardestwworkingman@showbusiness.com</div>
+          </div>
+        </li>
+        </a>
+        <li class="list-group-item list-group-item-danger">
+          <div class="row no-gutters">
+            <i class="material-icons col-2 medium my-auto ml-3 text-danger">highlight_off</i>
+            <div class="col-9 my-auto">Delete contact</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card fixed-bottom">
+    <div id="add-contact" class="card-header toggle">
+      <div class="row no-gutters">
+        <i id="plus-minus" class="material-icons col-2 large my-auto mr-3">add</i>
+        <h3 class="col mb-0 my-auto">Add a contact</h3>
+      </div>
+    </div>
+    <form action="submit.php">
+      <div class="container-fluid p-4">
+        <div class="form-group">
+          <label for="exampleInputFirstName">First Name <small>(required)</small></label>
+          <input name="first_name" class="form-control form-control-lg" placeholder="Enter First Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputLastName">Last Name <small>(required)</small></label>
+          <input name="last_name" class="form-control form-control-lg" placeholder="Enter First Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address <small>(required)</small></label>
+          <input name="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <button type="submit" class="btn btn-block btn-success btn-lg my-4">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    // slideToggle all togglable elements
+    var toggle = $(".toggle");
+    toggle.click(function() {
+      $(this).next().slideToggle("slow");
+      $(this).parent().siblings().children().next().slideUp("slow");
+    });
+    // change the icons on click
+    $(".view-contact").click(function() {
+      var icon = $(this).find("i");
+      icon.html(icon.text() == "account_circle" ? "keyboard_arrow_down" : "account_circle");
+    });
+    $("#add-contact").click(function() {
+      $('#plus-minus').html($('#plus-minus').text() == "remove" ?  "add"  :  "remove");
+    });
+  });
+  </script>
+</body>
+</html>
