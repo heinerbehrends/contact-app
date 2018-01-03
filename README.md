@@ -33,4 +33,4 @@ search filter en ui update, modal styling
 confirm delete in cards
 scroll to and open new entry, modal dialoog verwijderen
 
-Het proces is niet echt snel maar toch zonder grote struikelblokken verlopen, mede dankzij mijn ervaring met de Playlist-App en de goede documentatie van jQuery. Ik heb nog oefening nodig om de code mooier te maken, gestructureerder te programmeren. Ik kwam aan de grenzen van overzichtelijkheid en mede daarom heb ik besloten om voor de tweede opdracht een nieuwe structuur te leren en react/redux te leren. 
+Het proces is niet echt snel maar toch zonder grote struikelblokken verlopen, mede dankzij mijn ervaring met de Playlist-App en de goede documentatie van jQuery. Ik heb nog oefening nodig om de code mooier te maken, gestructureerder te programmeren. Ik kwam aan de grenzen van overzichtelijkheid en mede daarom heb ik besloten om voor de tweede opdracht een nieuwe structuur te leren en de beginselen van react/redux te leren. 
