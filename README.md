@@ -13,19 +13,19 @@ De vormgeving is bedoelt voor kleine schermen zoals mobiele telefoons vanaf 320 
 
 Getest met WAMP64, PHP 5.6.25 en mySQL 5.7.14
 
-sessie 1:
+- sessie 1:
 database aan de praat krijgen,
 php met js aan de praat krijgen
-sessie 2: 
+- sessie 2: 
 basic layout, delete functie, animatie
-sessie 3: 
+- sessie 3: 
 nieuwe layout aan database koppelen, 
 modal dialoog voor delete functie,
-sessie 4:
+- sessie 4:
 input validation, styling, fix auto update
-sessie 5:
+- sessie 5:
 search filter en ui update, modal styling
-sessie 6: 
+- sessie 6: 
 confirm delete in cards
 scroll to and open new entry, modal dialoog verwijderen
 
