@@ -4,10 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $id = $_POST["id"];
 }
 // setup variables for db connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "address_book";
+include 'config.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

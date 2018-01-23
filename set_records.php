@@ -7,10 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $last_name = test_input($_POST["last_name"]);
   $email = test_input($_POST["email"]);
   // setup variables for db access
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "address_book";
+  include 'config.php';
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,25 +17,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     die("Connection failed: " . $conn->connect_error);
   }
 
+  // prepare and bind
+  $stmt = $conn->prepare("INSERT INTO contacts (first_name, last_name, email) VALUES (?, ?, ?)");
+  $stmt->bind_param("sss", $first_name, $last_name, $email);
+
   // Escape user inputs for security
   $first_name = $conn->real_escape_string($_REQUEST['first_name']);
   $last_name = $conn->real_escape_string($_REQUEST['last_name']);
   $email = $conn->real_escape_string($_REQUEST['email']);
 
   // attempt insert query execution
-  $sql = "INSERT INTO contacts (first_name, last_name, email) VALUES ('$first_name', '$last_name', '$email')";
-  // if query succeeds get last entry from db and echo to client, else echo an error message
-  $sql2 = "SELECT row from table ORDER BY id DESC LIMIT 1";
-
-  if($conn->query($sql) == true) {
+  if($stmt->execute() == true) {
     echo $conn->insert_id;
   }
-  // $last_row = $conn->query($sql2);
   else {
-    echo "ERROR: Could not able to execute $sql. " . $conn->error;
+    echo "ERROR: Not able to execute $stmt. " . $conn->error;
   }
 
   // Close connection
+  $stmt->close();
   $conn->close();
 }
 // input validation
