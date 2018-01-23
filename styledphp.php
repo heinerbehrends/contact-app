@@ -33,7 +33,7 @@
         <h3 class="col mb-0 my-auto ml-3">Add a contact</h3>
       </div>
     </div>
-    <form id="needs-validation" method="post" action="set_records.php" novalidate>
+    <form id="needs-validation" method="post" action="read_write.php" novalidate>
       <div class="container-fluid p-4">
         <div class="form-group">
           <label for="customValidation1">First Name <small>(required)</small></label>

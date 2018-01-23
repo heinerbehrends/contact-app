@@ -53,7 +53,7 @@ $(function() {
   // create the togglable cards from the database with $.ajax and $.each loop
   $.ajax({
     method: "GET",
-    url: "get_records.php",
+    url: "read_write.php",
   }).done(function(data) {
     // save result in global variable
     window.result = $.parseJSON(data);
